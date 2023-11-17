@@ -1,0 +1,23 @@
+version: '3.5'
+services:
+    php:
+        build:
+            context: ./docker/php/
+            args:
+                PHP_VERSION: ${PHP_VERSION}
+        extra_hosts:
+            - 'host.docker.internal:${HOST_DOCKER_INTERNAL}'
+            - 'api.wordpress.org:198.143.164.251'
+        volumes:
+        - './docker/php/conf/:/usr/local/etc/php/conf.d/'
+        - 'data:/var/www/:ro'
+        networks:
+        - backend
+networks:
+  backend:
+    name: phpbackend
+    driver: "bridge"
+volumes:
+  data:
+    name: public_html
+    external: true
