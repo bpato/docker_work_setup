@@ -1,0 +1,4 @@
+docker/nginx/conf/*.conf
+
+docker/nginx/ssl/*.crt
+docker/nginx/ssl/*.key
