@@ -52,6 +52,15 @@ Modificamos la configuración de nginx docker/nginx/conf/default.conf añadiendo
 
 ### Wordpress
 
+### Laravel
+
+docker exec [container] composer create-project laravel/laravel example-app
+docker exec [container] php example-app/artisan serve --port=8080 --host=127.0.0.1
+
+### Ejecutar comandos
+
+docker exec [container] [comand]
+
 ### Ejecución
 
 Finalmente ejecutamos
