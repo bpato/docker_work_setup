@@ -15,3 +15,7 @@ services:
     ports:
     - '${APP_PORT}:3306'
     container_name: mysql
+networks:
+  default:
+    name: phpbackend
+    external: true
